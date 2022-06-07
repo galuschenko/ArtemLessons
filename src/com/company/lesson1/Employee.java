@@ -10,13 +10,20 @@ public class Employee {
   public int age;
   public String team;
   public long salary;
+  public POSITION position;
 
-  public Employee(String firstName, String lastName, int age, String team, long salary) throws Exception {
-    if (salary < 0) {
-      throw new Exception("Incorrect salary value");
-    } else {
-      this.salary = salary;
+  public Employee(String firstName, String lastName, int age, String team, POSITION position)
+      throws Exception {
+    this(firstName, lastName, age, team, 0, position);
+  }
+
+
+  public Employee(String firstName, String lastName, int age, String team, long salary, POSITION position) throws Exception {
+    if (salary <= 0) {
+      salary = position.minSalary;
     }
+    this.salary = salary;
+
     if (age < 0) {
       throw new Exception("Incorrect age value");
     } else {
@@ -31,6 +38,7 @@ public class Employee {
     this.firstName = firstName;
     this.lastName = lastName;
     this.team = team;
+    this.position = position;
   }
 
 }
