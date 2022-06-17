@@ -101,6 +101,11 @@ public class Main {
         for (Map.Entry<String, Integer> entry : counterTeam.entrySet()) {
             System.out.println("Position: " + entry.getKey() + " counts: " + entry.getValue());
         }
+
+        System.out.println("====================");
+        for (Employee employee : employeeList) {
+            employee.work();
+        }
     }
 
 

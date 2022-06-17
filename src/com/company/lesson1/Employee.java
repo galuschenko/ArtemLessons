@@ -52,4 +52,23 @@ public class Employee {
         &&((Employee) obj).lastName.equals(this.lastName);
   }
 
+  public void work() {
+    for (int i = 0; i < 10; i++) {
+      System.out.println("Employee " + this.firstName + " " + this.lastName + " works: " + i);
+      try {
+        Thread.sleep(500);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  public int compute() {
+    int result = 1;
+    for (int i = 1; i < 20; i++) {
+      result = result * i;
+    }
+    return result;
+  }
+
 }
