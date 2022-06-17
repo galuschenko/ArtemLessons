@@ -2,6 +2,7 @@ package com.company.lesson1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class Employee {
 
@@ -39,6 +40,16 @@ public class Employee {
     this.lastName = lastName;
     this.team = team;
     this.position = position;
+  }
+
+  public String toString() {
+    return "Empoloyee info: " + this.firstName + " " + this.lastName + " " + this.position.toString();
+  }
+
+  public boolean equals(Object obj) {
+    return obj instanceof Employee
+        && ((Employee) obj).firstName.equals(this.firstName)
+        &&((Employee) obj).lastName.equals(this.lastName);
   }
 
 }
